@@ -55,12 +55,6 @@ Snail.prototype = Object.create(Animal.prototype);
 Snail.prototype.eats = ['plants', 'fungus', 'algae'];
 Snail.prototype.id = 'snail';
 
-var command;
-var eating;
-var thingToEat;
-var dead = false;
-
-
 function printRoom() {
     console.log("Here's where the room will go.");
 }
@@ -78,6 +72,7 @@ console.assert((kit instanceof Animal) === true);
 console.assert(kit.id === 'bat');
 
 function takeInput() {
+    var command;
     var eating;
     var thingToEat;
     command = prompt(">> ");
