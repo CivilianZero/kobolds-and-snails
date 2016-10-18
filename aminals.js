@@ -28,7 +28,7 @@ function Kobold() {
 
 Kobold.prototype = Object.create(Animal.prototype);
 Kobold.prototype.eats = ['plant', 'animal'];
-Kobold.prototype.id = 'Kobold';
+Kobold.prototype.id = 'kobold';
 
 function Bat() {
     this.says = 'BlOOd!';
@@ -46,7 +46,7 @@ function Snail() {
 
 Snail.prototype = Object.create(Animal.prototype);
 Snail.prototype.eats = ['plants', 'fungus', 'algae'];
-Snail.prototype.id = 'Snail';
+Snail.prototype.id = 'snail';
 
 var command;
 var eating;
