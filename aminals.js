@@ -19,25 +19,29 @@ Animal.prototype.eat = function (food) {
     }
 };
 
-function Dog() {
-    this.says = 'woof';
+function Kobold() {
+    this.says = 'grr';
     this.hunger = 100;
 }
 
-Dog.prototype = Object.create(Animal.prototype);
-Dog.prototype.eats = ['plant', 'animal'];
+Kobold.prototype = Object.create(Animal.prototype);
+Kobold.prototype.eats = ['plant', 'animal'];
+Kobold.prototype.id = 'Kobold';
 
-function Cat() {
+function Bat() {
     this.says = 'meow';
     this.hunger = 100;
 }
 
-Cat.prototype = Object.create(Animal.prototype);
-Cat.prototype.eats = ['animal'];
+Bat.prototype = Object.create(Animal.prototype);
+Bat.prototype.eats = ['animal'];
+Bat.prototype.id = 'Bat';
 
 function Snail() {
     this.hunger = 100;
+    this.says = 'KAANYEEE WEST';
 }
 
 Snail.prototype = Object.create(Animal.prototype);
 Snail.prototype.eats = ['plants', 'fungus', 'algae'];
+Snail.prototype.id = 'Snail';
