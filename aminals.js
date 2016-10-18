@@ -31,7 +31,7 @@ Kobold.prototype.eats = ['plant', 'animal'];
 Kobold.prototype.id = 'Kobold';
 
 function Bat() {
-    this.says = 'meow';
+    this.says = 'BlOOd!';
     this.hunger = 100;
 }
 
@@ -54,7 +54,7 @@ var thingToEat;
 var dead = false;
 
 
-function printRoom () {
+function printRoom() {
     console.log("Here's where the room will go.");
 }
 
@@ -75,4 +75,3 @@ while (!dead) {
     printRoom();
     takeInput();
 }
-
