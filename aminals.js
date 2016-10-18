@@ -61,8 +61,8 @@ function printRoom () {
 function takeInput() {
     command = prompt(">> ");
     if (command.indexOf('eat') === 0) {
-        var eating = command.slice(4),
-            thingToEat = room.find((value) => (value.id === eating));
+        var eating = command.slice(4);
+        var thingToEat = room.find((value) => (value.id === eating));
         console.log(thingToEat);
         Player.eat
     } else if (command.indexOf('leave room') === 0) {
