@@ -15,16 +15,15 @@ function fromXToY(x, y) {
 
 function generateRoom() {
     room = [];
-    for (i = 0; i < fromXToY(5, 15); i++) {
-        whichOnes = fromXToY(0, 4);
+    for (i = 0; i < fromXToY(8, 16); i++) {
+        whichOnes = fromXToY(0, 5);
         room.push(entities[whichOnes]);
     }
 }
 
 function populateRoom() {
-    generateRoom();
     for (i = 0; i < room.length; i++) {
-        switch(i) {
+        switch(room[i]) {
             case 0:
                 room[i] = 'fungus';
                 break;
@@ -43,6 +42,3 @@ function populateRoom() {
         }
     }
 }
-
-populateRoom();
-console.log(room);
