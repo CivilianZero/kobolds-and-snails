@@ -37,7 +37,7 @@ function Bat() {
 
 Bat.prototype = Object.create(Animal.prototype);
 Bat.prototype.eats = ['animal'];
-Bat.prototype.id = 'Bat';
+Bat.prototype.id = 'bat';
 
 function Snail() {
     this.hunger = 100;
