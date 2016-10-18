@@ -48,9 +48,7 @@ Snail.prototype = Object.create(Animal.prototype);
 Snail.prototype.eats = ['plants', 'fungus', 'algae'];
 Snail.prototype.id = 'snail';
 
-<<<<<<< HEAD
 function printRoom () {
-=======
 var command;
 var eating;
 var thingToEat;
@@ -58,7 +56,6 @@ var dead = false;
 
 
 function printRoom() {
->>>>>>> e5351109ba0be81aecb43b7106dbe25277745591
     console.log("Here's where the room will go.");
 }
 
@@ -101,9 +98,6 @@ while (!player.dead) {
         player.dead = !player.dead;
     }
 }
-<<<<<<< HEAD
 
 console.log("You died!");
 
-=======
->>>>>>> e5351109ba0be81aecb43b7106dbe25277745591
