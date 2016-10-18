@@ -6,15 +6,20 @@ var entities = [
     4  //snail
 ],
     room = [],
-    i = 0;
+    i,
+    whichOnes;
 
 function fromXToY(x, y) {
-    Math.floor(Math.random() * (y-x)) + x;
+    return Math.floor(Math.random() * (y-x)) + x;
 };
 
 function generateRoom() {
-    while (i < fromXToY(5, 15)) {
-        i = fromXToY(0, 4);
-        room.push(entities[i]);
+    room = [];
+    for (i = 0; i < fromXToY(5, 15); i++) {
+        whichOnes = fromXToY(0, 4);
+        room.push(entities[whichOnes]);
     }
 }
+
+generateRoom();
+console.log(room);
