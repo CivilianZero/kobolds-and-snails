@@ -8,6 +8,13 @@ Animal.prototype.says = '...';
 Animal.prototype.speak = function () {
     return this.says;
 };
+Animal.prototype.isDead = function () {
+    if (this.hunger > 100) {
+        return true;
+    } else {
+        return false;
+    }
+}
 Animal.prototype.eat = function (food) {
     if (this.eats.indexOf('animal') >= 0 && food instanceof Animal) {
         this.hunger -= (100 - food.hunger);
@@ -48,7 +55,6 @@ Snail.prototype = Object.create(Animal.prototype);
 Snail.prototype.eats = ['plants', 'fungus', 'algae'];
 Snail.prototype.id = 'snail';
 
-function printRoom () {
 var command;
 var eating;
 var thingToEat;
@@ -60,12 +66,10 @@ function printRoom() {
 }
 
 var player = new Kobold();
-player.dead = false;
 
 console.log(player);
 var command;
-var eating;
-var thingToEat;
+
 var room = [];
 var kit = new Bat();
 kit.hunger = 70;
@@ -74,6 +78,8 @@ console.assert((kit instanceof Animal) === true);
 console.assert(kit.id === 'bat');
 
 function takeInput() {
+    var eating;
+    var thingToEat;
     command = prompt(">> ");
     if (command.indexOf('eat') === 0) {
         var eating = command.slice(4);
@@ -84,14 +90,14 @@ function takeInput() {
     } else if (command.indexOf('leave room') === 0) {
         generateRoom();
     } else if (command.indexOf('die') === 0) {
-        player.dead = true;
+        player.hunger = 101;
     } else {
         console.log("Your command sucks.");
     }
 
 }
 
-while (!player.dead) {
+while (!player.isDead()) {
     printRoom();
     takeInput();
     if (player.hunger <= 0) {
