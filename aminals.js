@@ -48,15 +48,30 @@ Snail.prototype = Object.create(Animal.prototype);
 Snail.prototype.eats = ['plants', 'fungus', 'algae'];
 Snail.prototype.id = 'Snail';
 
-var command = prompt(">> ");
+var command;
+var eating;
+var thingToEat;
+var dead = false;
 
 
-if (command.indexOf('eat') === 0) {
-    var eating = command.slice(4);
-    thingToEat = room.find((value) => (value.id === eating));
-    console.log(thingToEat);
-} else if (command.indexOf('leave room') === 0) {
-    generateRoom();
+function printRoom () {
+    console.log("Here's where the room will go.");
 }
 
+function takeInput() {
+    command = prompt(">> ");
+    if (command.indexOf('eat') === 0) {
+        var eating = command.slice(4);
+        var thingToEat = room.find((value) => (value.id === eating));
+        console.log(thingToEat);
+    } else if (command.indexOf('leave room') === 0) {
+        generateRoom();
+    }
+
+}
+
+while (!dead) {
+    printRoom();
+    takeInput();
+}
 
