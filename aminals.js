@@ -1,3 +1,5 @@
+var prompt = require('prompt-sync')();
+
 function Animal() {
     this.hunger = 100;
 }
@@ -41,3 +43,16 @@ function Snail() {
 
 Snail.prototype = Object.create(Animal.prototype);
 Snail.prototype.eats = ['plants', 'fungus', 'algae'];
+
+var command = prompt(">> ");
+
+
+if (command.indexOf('eat') === 0) {
+    var eating = command.slice(4);
+    thingToEat = room.find((value) => (value.id === eating));
+    console.log(thingToEat);
+} else if (command.indexOf('leave room') === 0) {
+    generateRoom();
+}
+
+
