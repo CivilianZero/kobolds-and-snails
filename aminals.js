@@ -8,13 +8,15 @@ Animal.prototype.says = '...';
 Animal.prototype.speak = function () {
     return this.says;
 };
+
 Animal.prototype.isDead = function () {
     if (this.hunger > 100) {
         return true;
     } else {
         return false;
     }
-}
+};
+
 Animal.prototype.eat = function (food) {
     if (this.eats.indexOf('animal') >= 0 && food instanceof Animal) {
         this.hunger -= (100 - food.hunger);
