@@ -1,0 +1,22 @@
+{
+  "name": "kobolds-and-snails",
+  "version": "1.0.0",
+  "description": "",
+  "main": "aminals.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CivilianZero/kobolds-and-snails.git"
+  },
+  "author": "civilianzero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CivilianZero/kobolds-and-snails/issues"
+  },
+  "homepage": "https://github.com/CivilianZero/kobolds-and-snails#readme",
+  "dependencies": {
+    "prompt-sync": "^4.1.4"
+  }
+}
