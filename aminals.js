@@ -66,12 +66,12 @@ var player = new Kobold();
 console.log(player);
 var command;
 
-var room = [];
-var kit = new Bat();
-kit.hunger = 70;
-room.push(kit);
-console.assert((kit instanceof Animal) === true);
-console.assert(kit.id === 'bat');
+var room = []; // test code
+var kit = new Bat(); // test code
+kit.hunger = 70; // test code
+room.push(kit); // test code
+console.assert((kit instanceof Animal) === true); // test code
+console.assert(kit.id === 'bat'); // test code
 
 function takeInput() {
     var command;
@@ -102,4 +102,4 @@ while (!player.isDead()) {
     }
 }
 
-console.log("You died!");
+console.log("You Died!");
