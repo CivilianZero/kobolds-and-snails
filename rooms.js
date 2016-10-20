@@ -12,7 +12,7 @@ function fromXToY(x, y) {
 function generateRoom() {
     room = [];
     for (i = 0; i < fromXToY(8, 16); i++) {
-        let type = Math.random ? 'fauna' : 'flora',
+        let type = fromXToY(0, 2) ? 'fauna' : 'flora',
             set = entities[type],
             n = fromXToY(0, set.length),
             entity = type === 'fauna' ? new set[n]() : set[n];
