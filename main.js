@@ -10,19 +10,24 @@ function takeInput() {
     var eating;
     var thingToEat;
     command = prompt(">> ");
-    if (command.indexOf('eat') === 0) {
+    if (command.indexOf('eat ') === 0) {
         var eating = command.slice(4);
         var thingToEat = currentRoom.find((value) => (value.id === eating));
         player.eat(thingToEat);
-        currentRoom.splice(currentRoom.indexOf(thingToEat), 1);
+        if (currentRoom.indexOf(thingToEat) === -1) {
+            console.log("There aren't any of those!");
+        } else {
+            currentRoom.splice(currentRoom.indexOf(thingToEat), 1); 
+        }
         console.log(player.hunger);
         console.log(currentRoom);
     } else if (command.indexOf('leave room') === 0) {
         currentRoom = generateRoom();
+        console.log(currentRoom);
     } else if (command.indexOf('die') === 0) {
         player.kill();
     } else {
-        console.log("Your command sucks.");
+        console.log("Your command was not recognized.");
     }
 
 }
@@ -30,7 +35,7 @@ function takeInput() {
 while (!player.isDead()) {
     // printRoom();
     takeInput();
-    if (player.hunger <= 0) {
+    if (player.hunger > 100) {
         player.dead = !player.dead;
     }
 }
