@@ -3,6 +3,7 @@ var generateRoom = require("./rooms.js");
 var fauna = require("./aminals.js");
 var player = new fauna.Kobold();
 var currentRoom = generateRoom();
+var eatTheThings = require("./eatThemselves.js")
 console.log(currentRoom);
 
 function takeInput() {
@@ -27,9 +28,9 @@ function takeInput() {
     } else if (command.indexOf('die') === 0) {
         player.kill();
     } else {
-        console.log("Your command was not recognized.");
+        console.log("I'm not sure what you're trying to do there.");
     }
-
+    // eatThemselves();
 }
 
 while (!player.isDead()) {
