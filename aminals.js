@@ -16,7 +16,7 @@ Animal.prototype.isDead = function () {
 };
 
 Animal.prototype.kill = function () {
-    this.hunger = 100;
+    this.hunger = 101;
 };
 
 Animal.prototype.eat = function (food) {
@@ -58,12 +58,6 @@ function Snail() {
 Snail.prototype = Object.create(Animal.prototype);
 Snail.prototype.eats = ['plants', 'fungus', 'algae'];
 Snail.prototype.id = 'snail';
-
-// var kit = new Bat(); // test code
-// kit.hunger = 70; // test code
-// room.push(kit); // test code
-// console.assert((kit instanceof Animal) === true); // test code
-// console.assert(kit.id === 'bat'); // test code
 
 module.exports = {
     Bat: Bat,
