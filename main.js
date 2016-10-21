@@ -3,7 +3,7 @@ var generateRoom = require("./rooms.js");
 var fauna = require("./aminals.js");
 var player = new fauna.Kobold();
 var currentRoom = generateRoom();
-var eatTheThings = require("./eatThemselves.js")
+var eatThemselves = require("./eatThemselves.js")
 console.log(currentRoom);
 
 function takeInput() {

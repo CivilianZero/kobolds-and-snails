@@ -6,13 +6,13 @@ var entities = {
 };
 
 function fromXToY(x, y) {
-    return Math.floor(Math.random() * (y  -x)) + x;
+    return Math.floor(Math.random() * ((y+1)  - x)) + x;
 }
 
 function generateRoom() {
     var room = [];
-    for (var i = 0; i < fromXToY(8, 16); i++) {
-        let type = fromXToY(0, 2) ? 'fauna' : 'flora',
+    for (var i = 0; i < fromXToY(8, 15); i++) {
+        let type = fromXToY(0, 1) ? 'fauna' : 'flora',
             set = entities[type],
             n = fromXToY(0, set.length),
             entity = type === 'fauna' ? new set[n]() : set[n];
