@@ -1,1 +1,5 @@
-var generateRoom = require("./rooms.js");
+function eatTheThings () {
+
+}
+
+module.exports = eatTheThings;
