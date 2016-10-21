@@ -1,17 +1,17 @@
+var fauna = require('./aminals.js');
+
 var entities = {
     flora: ['plant', 'fungus', 'algae'],
-    fauna: [Snail, Bat]
-},
-    room = [],
-    i;
+    fauna: [fauna.Snail, fauna.Bat]
+};
 
 function fromXToY(x, y) {
     return Math.floor(Math.random() * (y  -x)) + x;
 }
 
 function generateRoom() {
-    room = [];
-    for (i = 0; i < fromXToY(8, 16); i++) {
+    var room = [];
+    for (var i = 0; i < fromXToY(8, 16); i++) {
         let type = fromXToY(0, 2) ? 'fauna' : 'flora',
             set = entities[type],
             n = fromXToY(0, set.length),
@@ -20,3 +20,5 @@ function generateRoom() {
     }
     return room;
 }
+
+module.exports = generateRoom;
