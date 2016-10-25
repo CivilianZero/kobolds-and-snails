@@ -3,7 +3,7 @@ var generateRoom = require("./rooms.js");
 var fauna = require("./aminals.js");
 var player = new fauna.Kobold();
 var currentRoom = generateRoom();
-var eatThemselves = require("./eatThemselves.js");
+// var eatThemselves = require("./eatThemselves.js");
 console.log(currentRoom);
 
 function printRoom() {
@@ -15,6 +15,19 @@ function printRoom() {
             console.log(currentRoom[i]);
         }
     }
+}
+
+function eatThemselves () {
+    currentRoom.forEach(function (value) {
+        if (typeof value === "object") {
+            for (var i = 0; i < currentRoom.length; i++) {
+                if (value.eats.indexOf(currentRoom[i] && currentRoom.indexOf(value) !== i) >= 0) {
+                    value.eat(currentRoom[i]);
+                    currentRoom.splice(i, 1);
+                }
+            }
+        }
+    });
 }
 
 function takeInput() {

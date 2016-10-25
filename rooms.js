@@ -6,7 +6,7 @@ var entities = {
 };
 
 function fromXToY(x, y) {
-    return Math.floor(Math.random() * ((y+1)  - x)) + x;
+    return Math.round(Math.random() * ((y - x) + x));
 }
 
 function generateRoom() {
