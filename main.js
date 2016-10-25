@@ -3,7 +3,7 @@ var generateRoom = require("./rooms.js");
 var fauna = require("./aminals.js");
 var player = new fauna.Kobold();
 var currentRoom = generateRoom();
-var eatThemselves = require("./eatThemselves.js")
+var eatThemselves = require("./eatThemselves.js");
 console.log(currentRoom);
 
 function printRoom() {
@@ -21,16 +21,16 @@ function takeInput() {
     var command;
     var eating;
     var thingToEat;
-    console.log("You are a kobold standing in a cave filled with with many things. There is a small mailbox here. What would you like to do? \n"
+    console.log("You are a kobold standing in a cave filled with with many things. \n There is a small mailbox here. \n What would you like to do? \n"
                 + "Options include: \n"
                 + "eat something \n"
                 + "leave room \n"
-                + "die \n")
+                + "die \n");
     printRoom();
     command = prompt(">> ");
     if (command.indexOf('eat ') === 0) {
-        var eating = command.slice(4);
-        var thingToEat = currentRoom.find((value) => (value.id === eating));
+        eating = command.slice(4);
+        thingToEat = currentRoom.find((value) => (value.id === eating));
         player.eat(thingToEat);
         if (currentRoom.indexOf(thingToEat) === -1) {
             console.log("There aren't any of those!");
@@ -47,7 +47,7 @@ function takeInput() {
     } else {
         console.log("I'm not sure what you're trying to do there.");
     }
-    // eatThemselves();
+    eatThemselves();
 }
 
 while (!player.isDead()) {
