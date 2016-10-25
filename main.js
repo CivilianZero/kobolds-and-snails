@@ -1,6 +1,7 @@
 var prompt = require('prompt-sync')();
 var generateRoom = require("./rooms.js");
 var fauna = require("./aminals.js");
+var eatThemselves = require("./eatThemselves.js");
 var player = new fauna.Kobold();
 var currentRoom = generateRoom();
 // var eatThemselves = require("./eatThemselves.js");
@@ -15,19 +16,6 @@ function printRoom() {
             console.log(currentRoom[i]);
         }
     }
-}
-
-function eatThemselves () {
-    currentRoom.forEach(function (value) {
-        if (typeof value === "object") {
-            for (var i = 0; i < currentRoom.length; i++) {
-                if (value.eats.indexOf(currentRoom[i] && currentRoom.indexOf(value) !== i) >= 0) {
-                    value.eat(currentRoom[i]);
-                    currentRoom.splice(i, 1);
-                }
-            }
-        }
-    });
 }
 
 function takeInput() {
@@ -60,7 +48,7 @@ function takeInput() {
     } else {
         console.log("I'm not sure what you're trying to do there.");
     }
-    eatThemselves();
+    eatThemselves(currentRoom);
 }
 
 while (!player.isDead()) {
